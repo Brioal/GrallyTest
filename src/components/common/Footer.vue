@@ -25,7 +25,7 @@
   }
   .footer {
     padding: 0px 0px;
-    background: #000000;
+    background-color: #F1EEE4;
     /*background: #ffffff;*/
     height: 200px;
   }
@@ -36,7 +36,7 @@
   }
 
   p{
-    color: white;
+    color: rgba(1, 1, 1, 0.79);
   }
 
 
