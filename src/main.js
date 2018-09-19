@@ -11,6 +11,11 @@ Vue.use(iView);
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
+// Vue-sources
+import Vueresource from 'vue-resource'
+Vue.use(Vueresource);
+
+
 
 Vue.config.productionTip = false;
 

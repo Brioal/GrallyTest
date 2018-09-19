@@ -1,57 +1,42 @@
 <template>
   <div>
-    <el-carousel :interval="5000" arrow="always" type="card" >
-      <el-carousel-item v-for="(item,index) in banners" :key="index">
-        <div class="banner_container" @click="jumpNews(0,0)">
-          <p>{{item.title}}</p>
-          <img :src="item.src">
-        </div>
-      </el-carousel-item>
-    </el-carousel>
+    <el-container>
+      <el-header style="height: 180px;">
+        <Header></Header>
+      </el-header>
+      <el-main class="main">
+        <el-row>
+          <el-col style="height:  100px" :xs="5" :sm="5" :md="5" :lg="5" :xl="5"></el-col>
+          <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14">
+            <router-view></router-view>
+          </el-col>
+          <el-col :xs="5" :sm="5" :md="5" :lg="5" :xl="5" style="height:  100px"></el-col>
+        </el-row>
+      </el-main>
+      <el-footer style="height: 200px;margin: 0px 0px;padding: 0;">
+        <HomeFooter></HomeFooter>
+      </el-footer>
+    </el-container>
   </div>
 </template>
 
 <script>
+  import Header from '../common/Header';
+  import HomeFooter from '../common/Footer';
+
   export default {
-    name: "Home",
-    data() {
-      return {
-        banners: [
-          {
-            title: '测试标题一',
-            src: '/static/banner1.jpg'
-          }, {
-            title: '测试标题二',
-            src: '/static/banner2.jpg'
-          }, {
-            title: '测试标题三',
-            src: '/static/banner3.jpg'
-          }
-        ]
-      }
-    }
+    components: {Header, HomeFooter}
   }
 </script>
 
 <style scoped>
-  .banner_container {
-    width: 811px;
-    height: 300px;
-    position: relative;
-    cursor: pointer;
+  .el-header {
+    padding: 0 0;
   }
 
-  .banner_container img {
-    width: 811px;
-    height: 300px;
-  }
-
-  .banner_container p {
-    z-index: 2;
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    bottom: 45px;
-    left: 10px;
+  .main {
+    padding: 0px 0px;
+    padding-bottom:  150px;
+    background: url("/static/back.png") repeat;
   }
 </style>

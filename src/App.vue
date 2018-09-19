@@ -17,5 +17,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+}
+.el-card__body {
+  padding: 0 0;
 }
 </style>
